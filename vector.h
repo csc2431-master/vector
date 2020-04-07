@@ -16,12 +16,16 @@ class Vector{
     double* _data;
     size_t _size;
 public:
+    // Constructor receives how many dimensions the vector will have
     Vector(size_t dimensions);
 
+    // Rule of three methods
     Vector(const Vector&);
     ~Vector();
     Vector& operator=(const Vector& rhs);
 
+    // Our operations, there could be more!
+    // Like Dot and Cross product!
     string ToString()const;
     double EuclidianDistance(const Vector& rhs)const;
     bool operator==(const Vector& rhs)const;
