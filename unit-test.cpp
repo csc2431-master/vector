@@ -21,8 +21,12 @@ int main(int argc, char* argv[]) {
     // Testing a vector in 2D (Comment to test card vec_6
     Vector b(2);
     assert(b.Dimensions() == 2);
+
     // ---------------------------------------
     // Why do we need to use this function????
+    // DoubleEquals(a,b)
+    // Testing default setting of components of 2D Vector
+    // Testing operator[] overload
     assert(DoubleEquals(b[0], 0.0));
     assert(DoubleEquals(b[1], 0.0));
 //    assert(b[0] == 0.0);
