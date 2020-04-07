@@ -20,7 +20,7 @@ public:
     Vector(size_t dimensions);
 
     // Rule of three methods
-    Vector(const Vector&);
+    Vector(const Vector& other);
     ~Vector();
     Vector& operator=(const Vector& rhs);
 
@@ -38,14 +38,14 @@ public:
     bool operator==(const Vector& rhs)const;
     bool operator!=(const Vector& rhs)const;
 
-    Vector operator+(const Vector&)const;
-    Vector operator-(const Vector&)const;
+    Vector operator+(const Vector& rhs)const;
+    Vector operator-(const Vector& rhs)const;
 
     bool IsValid()const; // returns true if the vector is valid, false if it is invalid (dimension == 0)
     size_t Dimensions()const; // returns the dimension space of the vector
 
-    ostream& Write(ostream&)const; // Can we overload this <<
-    istream& Read(istream&); // Can we overload this >>
+    ostream& Write(ostream& output)const; // Can we overload this <<
+    istream& Read(istream& input); // Can we overload this >>
 };
 
 #endif //VECTOR_VECTOR_H
