@@ -160,6 +160,38 @@ ostream &Vector::Write(ostream &output) const {
 
 istream &Vector::Read(istream &input) {
     size_t dimension;
-    
+    input >> dimension;
+    if (input.fail()){
+        return input;
+    }
+    if (dimension == 0){
+        if (_data){
+            delete[] _data;
+            _size = 0;
+        }
+        return input;
+    }
+    double* elements = new double[dimension];
+    for (size_t i = 0; i < dimension; i++) {
+        input >> elements[i];
+        if (input.fail()){
+            delete[] elements;
+            return input;
+        }
+    }
+
+    if (dimension != _size){
+        if (_data){
+            delete[] _data;
+        }
+        _size = dimension;
+        _data = elements;
+    }else{
+        for (size_t i = 0; i < dimension; i++) {
+            _data[i] = elements[i];
+        }
+        delete[] elements;
+    }
+    return input;
 }
 
