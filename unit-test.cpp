@@ -53,6 +53,7 @@ int main(int argc, char* argv[]) {
 //    assert(b[1] == 0.0);
     stream.clear();
 
+    // Testing constructors that take in an array
     double data1[] = {1, 2, 3};
     double data2[] = {-1, 2, 1};
     Vector c(3, data1);
