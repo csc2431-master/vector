@@ -61,7 +61,7 @@ Vector &Vector::operator=(const Vector &rhs) {
 }
 
 Vector::Vector(size_t dimensions, const double *data) {
-    _size == dimensions;
+    _size = dimensions;
     if (_size == 0){
         _data = nullptr;
     }else{
@@ -139,7 +139,7 @@ Vector Vector::operator-(const Vector &rhs) const {
 }
 
 bool Vector::IsValid() const {
-    return _size == 0;
+    return _size != 0;
 }
 
 size_t Vector::Dimensions() const {
