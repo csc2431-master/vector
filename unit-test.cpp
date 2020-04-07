@@ -13,12 +13,12 @@ using std::stringstream;
 bool DoubleEquals(double a, double b, double epsilon = 1e-6);
 
 int main(int argc, char* argv[]) {
-    // Testing empty vector (Comment to test card vec_5
+    // Testing empty vector (Comment to test card vec_6
     Vector a(0);
     assert(!a.IsValid());
     cout << "Is Valid passed" << endl;
 
-
+    // Testing a vector in 2D (Comment to test card vec_6
     Vector b(2);
     assert(b.Dimensions() == 2);
     // ---------------------------------------
