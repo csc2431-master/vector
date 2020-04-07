@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <cassert>
+#include <cmath>
 
 using std::cout;
 using std::endl;
@@ -63,7 +64,31 @@ int main(int argc, char* argv[]) {
     assert(f[1] == 2.0);
     assert(f[2] == 3.0);
 
- + - Euclidian
+    Vector g(3);
+    Vector h(3);
+    Vector i(3);
+    g[0] = 2.5;
+    g[1] = 1.2;
+    g[2] = 0.0;
+    h[0] = -0.5;
+    h[1] = 0.3;
+    h[2] = 4.0;
+    i = g + h;
+    assert(i.IsValid());
+    assert(i[0] == 2.0);
+    assert(i[1] == 1.5);
+    assert(i[2] == 4.0);
+
+    i = g - h;
+    assert(i.IsValid());
+    assert(i[0] == 3.0);
+    assert(i[1] == 0.9);
+    assert(i[2] == -4.0);
+
+    assert(g.EuclidianDistance(h) == sqrt(25.81));
+    assert(g.EuclidianDistance(g) == 0);
+
+    cout << "All unit tests passed" << endl;
 
     return 0;
 }
