@@ -31,12 +31,15 @@ int main(int argc, char* argv[]) {
     assert(DoubleEquals(b[1], 0.0));
 //    assert(b[0] == 0.0);
 //    assert(b[1] == 0.0);
+    // Testing write-to operator[] overload
     b[0] = 1.5;
     b[1] = -1.5;
     assert(DoubleEquals(b[0], 1.5));
     assert(DoubleEquals(b[1], -1.5));
 //    assert(b[0] == 1.5);
 //    assert(b[1] == -1.5);
+    // Testing IO with streams
+    // It would be nice to overload << and >>
     stringstream stream;
     b.Write(stream);
     assert(stream.str() == "2 1.5 -1.5");
