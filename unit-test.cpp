@@ -1,6 +1,14 @@
-#include <iostream>
+#include "vector.h"
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+#include <iostream>
+#include <sstream>
+
+using std::cout;
+using std::endl;
+using std::stringstream;
+
+
+int main(int argc, char* argv[]) {
+
     return 0;
 }
