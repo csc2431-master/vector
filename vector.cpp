@@ -25,6 +25,16 @@ Vector::Vector(size_t dimensions) {
         }
     }
 }
+Vector::Vector(size_t dimensions, const double *data) {
+    _size = dimensions;
+    if (_size == 0){
+        _data = nullptr;
+    }else{
+        _data = new double[_size];
+        for (size_t i = 0; i < _size; i++)
+            _data[i] = data[i];
+    }
+}
 
 Vector::Vector(const Vector &other) {
     _size = other._size;
@@ -60,16 +70,6 @@ Vector &Vector::operator=(const Vector &rhs) {
     return *this;
 }
 
-Vector::Vector(size_t dimensions, const double *data) {
-    _size = dimensions;
-    if (_size == 0){
-        _data = nullptr;
-    }else{
-        _data = new double[_size];
-        for (size_t i = 0; i < _size; i++)
-            _data[i] = data[i];
-    }
-}
 
 const double &Vector::operator[](size_t index) const {
     return _data[index];
