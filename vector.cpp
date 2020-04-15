@@ -167,6 +167,7 @@ istream &Vector::Read(istream &input) {
     if (dimension == 0){
         if (_data){
             delete[] _data;
+            _data = nullptr;
             _size = 0;
         }
         return input;
